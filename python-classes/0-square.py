@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Module square"""
-
-class square:
+""" Module Sqaure """
 
 
-    """Empty square class"""
+class Square:
+    """Empty Square class"""
     pass
 
