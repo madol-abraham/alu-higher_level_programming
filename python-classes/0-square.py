@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-class square:
-    pass
-sq = square()
+#Write an empty class Square that defines a square:
+class Square
+ pass
