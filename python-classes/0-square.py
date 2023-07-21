@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-class square:
-    # Empty class square
+""" Module Sqaure """
+
+
+class Square:
+    """Empty Square class"""
     pass
 
