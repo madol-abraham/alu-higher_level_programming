@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Module square"""
 
-"""import square"""
+class square:
 
-class Square:
-    """Empty Square class"""
+
+    """Empty square class"""
     pass
+
