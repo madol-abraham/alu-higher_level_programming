@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-# Module Sqaure 
 
+"""import square"""
 
 class Square:
-     Empty Square class
+    """Empty Square class"""
     pass
-
