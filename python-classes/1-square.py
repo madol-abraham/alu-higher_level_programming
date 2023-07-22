@@ -7,6 +7,6 @@ class Square:
     """Representing a new square."""
 
     def__init__(self,size):
-    """initializing the size."""
+        """initializing the size."""
 
-    self.__size = size
+        self.__size = size
