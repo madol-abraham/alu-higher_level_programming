@@ -4,6 +4,7 @@
 
 
 
+
 class Rectangle:
     '''class: Rectangle this is an empty class
     '''
