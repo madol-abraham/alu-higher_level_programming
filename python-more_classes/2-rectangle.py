@@ -2,9 +2,6 @@
 
 """Write a class Rectangle that defines a rectangle"""
 
-
-
-
 class Rectangle:
     '''class: Rectangle this is an empty class
     '''
