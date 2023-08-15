@@ -1,67 +1,21 @@
-#Execute by using python3 -m doctest ./tests/*
+#!/usr/bin/python3
+"""a function that adds 2 integers"""
 
-First import method to test
->>> add_integer = __import__('0-add_integer').add_integer
 
-SUCCESS CASES:
+def add_integer(a, b=98):
+    """
+    Adds and returns sum of a and b
+    - Args :
+        a: int or float
+        b: int or float, default 98
+    """
+    if type(a) == float or type(b) == float:
+        a = int(a)
+        b = int(b)
 
-Test signed and unsigned ints and floats:
-     >>> print(add_integer(2,3))
-     5
+    if type(a) != int:
+        raise TypeError("a must be an integer")
+    if type(b) != int:
+        raise TypeError("b must be an integer")
 
-     >>> print(add_integer(4, -2))
-     2
-
-     >>> print(add_integer(-3, -2))
-     -5
-
-     >>> print(add_integer(-5, 3))
-     -2
-
-Test use of default b=98 value:
-     >>> print(add_integer(1))
-     99
-
-FAIL CASES:
-
-Test no args:
-     >>> print(add_integer(None))
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
-     >>> print(add_integer(None, None))
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
-
-Test extra args:
-     >>> print(add_integer(1, 2, 3))
-     Traceback (most recent call last):
-     ...
-     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
-
-Test other data types:
-     >>> print(add_integer("hey"))
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
-     >>> print(add_integer(0, [1, 2, 3]))
-     Traceback (most recent call last):
-     ...
-     TypeError: b must be an integer
-
-Test max/min numbers Python can handle ("inf" is infinity):
-     >>> print(add_integer(float("inf")))
-     Traceback (most recent call last):
-     ...
-     OverflowError: cannot convert float infinity to integer
-     >>> print(add_integer(float("-inf")))
-     Traceback (most recent call last):
-     ...
-     OverflowError: cannot convert float infinity to integer
-
-Test special float NaN in Python (not a number):
-     >>> print(add_integer(float("NaN")))
-     Traceback (most recent call last):
-     ...
-     ValueError: cannot convert float NaN to integer
+    return a + b
