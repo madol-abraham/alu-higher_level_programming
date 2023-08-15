@@ -1,4 +1,4 @@
-# Execute test with python3 -m doctest -v ./tests/3-say_my_name.txt
+#!/usr/bin/python3
 
 First import method to test
 >>> say_my_name = __import__('3-say_my_name').say_my_name
@@ -10,7 +10,7 @@ Test two strings given:
      My name is First Middle Last
 
      >>> say_my_name("John")
-     My name is John 
+     My name is John
 
 FAIL CASES:
 
