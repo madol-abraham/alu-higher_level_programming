@@ -16,7 +16,7 @@ class Base:
     """
     __nb_objects = 0
 
-    def _init_(self, id=None):
+    def __init__(self, id=None):
         """Instatiates class object with id.
 
         Arguments
@@ -49,7 +49,7 @@ class Base:
         for obj in list_objs:  # convert objs to dicts
             dict_list.append(obj.to_dictionary())
 
-        with open((cls._name_ + '.json'), mode='w', encoding='utf-8') as f:
+        with open((cls.__name__ + '.json'), mode='w', encoding='utf-8') as f:
             f.write(cls.to_json_string(dict_list))
 
     @classmethod
@@ -60,9 +60,9 @@ class Base:
         Argument:
             dictionary: a dictionary representation of an object
         """
-        if cls._name_ is 'Square':
+        if cls.__name__ is 'Square':
             new_instance = cls(1)
-        if cls._name_ is 'Rectangle':
+        if cls.__name__ is 'Rectangle':
             new_instance = cls(1, 1)
         new_instance.update(**dictionary)
         return new_instance
@@ -73,7 +73,7 @@ class Base:
         loaded JSON file.
         """
         try:
-            with open(cls._name_ + '.json', mode='r', encoding='utf-8') as f:
+            with open(cls.__name__ + '.json', mode='r', encoding='utf-8') as f:
                 obj_list = cls.from_json_string(f.read())
             for i, obj in enumerate(obj_list):
                 obj_list[i] = cls.create(**obj)
@@ -93,7 +93,7 @@ class Base:
 
         keys = [[key for key in d.keys()] for d in dict_list]
 
-        with open((cls._name_ + '.csv'), mode='w',
+        with open((cls.__name__ + '.csv'), mode='w',
                   newline='', encoding='utf-8') as f:
             dwriter = csv.DictWriter(f, fieldnames=keys[0])
             dwriter.writeheader()
@@ -105,9 +105,9 @@ class Base:
         try:
             obj_list = []
             dictionary = {}
-            with open(cls._name_ + '.csv', mode='r', encoding='utf-8') as f:
+            with open(cls.__name__ + '.csv', mode='r', encoding='utf-8') as f:
                 reader = csv.reader(f)
-                keys = reader._next_()
+                keys = reader.__next__()
                 for values in reader:
                     for key, value in zip(keys, values):
                         dictionary[key] = int(value)
