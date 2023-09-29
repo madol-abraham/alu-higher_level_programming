@@ -1,5 +1,8 @@
 #!/usr/bin/node
 
-exports.converter = function (base) {
-  return (number = 0) => number.toString(base);
+let narg = 0;
+
+exports.logMe = function (item) {
+  console.log(narg + ': ' + item);
+  narg++;
 };
